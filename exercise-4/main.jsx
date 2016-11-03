@@ -51,12 +51,16 @@ var EmployeeSearch = React.createClass({
         return({searchString:''});
     },
     // Add a filter funciton
-
+	filter:function(event) {
+		var value = event.target.value;
+		this.setState({searchString:value});
+	}
+	
     render:function() {
         var employees = this.props.data;
 
         // Use this.state.searchString to filter down the `employees` array
-
+		console.log(this.state.searchString);
         return(
             <div>
                 <input placeholder="Search employees"/>
